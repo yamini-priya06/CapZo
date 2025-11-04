@@ -35,10 +35,9 @@ const BookingForm = ({ selectedHall, onClose }) => {
       return;
     }
 
-    // ✅ Ensure correct userId and hallId every time
     const bookingData = {
       ...formData,
-      userId: storedUser._id, // ✅ Directly available now
+      userId: storedUser._id,
       hallId: selectedHall._id,
     };
 
@@ -67,21 +66,26 @@ const BookingForm = ({ selectedHall, onClose }) => {
     <div className="booking-modal">
       <div className="booking-content">
         <h2>Book {selectedHall?.name}</h2>
-        <form onSubmit={handleSubmit}>
+
+        <form onSubmit={handleSubmit} className="booking-form">
           <input
+            type="text"
             name="name"
             placeholder="Your Name"
             value={formData.name}
             onChange={handleChange}
             required
           />
+
           <input
+            type="text"
             name="contactNumber"
             placeholder="Contact Number"
             value={formData.contactNumber}
             onChange={handleChange}
             required
           />
+
           <input
             type="date"
             name="date"
@@ -89,6 +93,7 @@ const BookingForm = ({ selectedHall, onClose }) => {
             onChange={handleChange}
             required
           />
+
           <input
             type="time"
             name="time"
@@ -96,6 +101,7 @@ const BookingForm = ({ selectedHall, onClose }) => {
             onChange={handleChange}
             required
           />
+
           <input
             type="number"
             name="guests"
@@ -104,6 +110,7 @@ const BookingForm = ({ selectedHall, onClose }) => {
             onChange={handleChange}
             required
           />
+
           <select
             name="paymentStatus"
             value={formData.paymentStatus}
@@ -113,16 +120,23 @@ const BookingForm = ({ selectedHall, onClose }) => {
             <option value="Paid">Paid</option>
           </select>
 
-          <button type="submit" disabled={loading}>
-            {loading ? "Booking..." : "Confirm Booking"}
-          </button>
+          {/* ✅ Buttons in one row */}
+          <div className="modal-buttons">
+            <button type="submit" className="confirm-btn" disabled={loading}>
+              {loading ? "Booking..." : "Confirm Booking"}
+            </button>
+            <button
+              type="button"
+              className="close-btn"
+              onClick={onClose}
+              disabled={loading}
+            >
+              Close
+            </button>
+          </div>
         </form>
 
         {message && <p className="response-message">{message}</p>}
-
-        <button className="close-btn" onClick={onClose}>
-          Close
-        </button>
       </div>
     </div>
   );
