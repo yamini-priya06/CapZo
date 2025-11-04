@@ -26,14 +26,12 @@ export const registerUser = async (req, res) => {
       role: role || "user",
     });
 
+    // ✅ Simplified JSON structure (no nested user object)
     res.status(201).json({
-      message: "Registration successful",
-      user: {
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-      },
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
       token: generateToken(user._id),
     });
   } catch (error) {
@@ -58,14 +56,12 @@ export const loginUser = async (req, res) => {
       return res.status(403).json({ message: "Role mismatch. Please select correct role." });
     }
 
+    // ✅ Simplified JSON structure
     res.status(200).json({
-      message: "Login successful",
-      user: {
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-      },
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
       token: generateToken(user._id),
     });
   } catch (error) {
