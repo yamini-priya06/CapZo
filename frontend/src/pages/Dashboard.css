@@ -1,0 +1,72 @@
+.dashboard-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background: linear-gradient(180deg, #f9f7ff 0%, #f0ebff 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(90, 70, 160, 0.15);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.welcome-text {
+  font-size: 28px;
+  font-weight: 600;
+  color: #4a2f8a;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #6b47dc;
+  margin-bottom: 25px;
+}
+
+.no-bookings {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(100, 80, 180, 0.15);
+}
+
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(70, 50, 130, 0.15);
+  transition: 0.3s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(60, 40, 120, 0.2);
+}
+
+.hall-name {
+  color: #5630d3;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.status {
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.status.paid {
+  color: #0b8a42;
+  background: #d9fbe5;
+}
+
+.status.pending {
+  color: #b67a00;
+  background: #fff4d9;
+}
