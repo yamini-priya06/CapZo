@@ -1,44 +1,64 @@
+/* 🔍 Search Bar Section */
 .search-bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
+  margin: 30px auto;
+  gap: 10px;
 }
 
 .search-bar input {
-  padding: 10px;
-  width: 250px;
-  border: 1px solid #aaa;
-  border-radius: 6px;
-  margin-right: 10px;
+  padding: 12px 14px;
+  width: 280px;
+  border: 1px solid #c7c7d3;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(100, 100, 160, 0.1);
+}
+
+.search-bar input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
 }
 
 .search-btn {
-  background-color: #6c63ff;
+  background: linear-gradient(135deg, #6c63ff, #5a54e6);
   color: white;
-  padding: 10px 18px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(90, 70, 160, 0.2);
 }
 
 .search-btn:hover {
-  background-color: #574bdb;
+  background: linear-gradient(135deg, #5a54e6, #4a43d1);
+  transform: translateY(-2px);
 }
 
+/* ✅ Availability Text */
 .available-text {
-  color: green;
-  font-weight: bold;
+  color: #1ca21c;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .not-available-text {
-  color: red;
-  font-weight: bold;
+  color: #d64040;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
+/* ℹ️ No Results Message */
 .no-results {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 25px;
   color: #777;
+  font-size: 1rem;
+  font-style: italic;
 }
