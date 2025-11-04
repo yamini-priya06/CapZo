@@ -38,7 +38,7 @@ const BookingForm = ({ selectedHall, onClose }) => {
     // ✅ Ensure correct userId and hallId every time
     const bookingData = {
       ...formData,
-      userId: storedUser._id,
+      userId: storedUser._id, // ✅ Directly available now
       hallId: selectedHall._id,
     };
 
